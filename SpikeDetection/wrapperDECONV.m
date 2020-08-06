@@ -65,6 +65,7 @@ for k = 1:niter
             [sp, ca, sd2, ~, Fbase] = OASISpreprocess(ops,  Fsub);
         case 'L0'
             [sp, ca, sd2] = deconvolution_standalone(ops, Fsub);
+            Fbase = zeros(size(F), 'single');
         otherwise
             error('Please choose deconvolution method as OASIS or L0')
     end
